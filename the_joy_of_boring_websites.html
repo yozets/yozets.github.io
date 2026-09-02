@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>The Joy of Boring Websites</title>
+  <meta
+    name="description"
+    content="A few thoughts on simple websites, HTML, CSS, and building things without unnecessary complexity."
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a href="index.html" class="site-title">Home</a>
+
+    <nav aria-label="Main navigation">
+      <a target="_blank" href="https://github.com/yozets/yozets.github.io">Source</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <header>
+        <h1>The Joy of Boring Websites</h1>
+
+        <p class="post-meta">
+          Published
+          <time datetime="2026-09-01">September 01, 2026</time>
+        </p>
+      </header>
+
+      <p>
+        There is something strangely satisfying about a website that doesn't
+        try very hard to impress you.
+      </p>
+
+      <p>
+        No giant hero section. No animated blobs floating behind the heading.
+        No cookie banner covering half the screen. No twelve megabytes of
+        JavaScript just to display a paragraph. And no annoying circles following
+        your mouse cursor.
+      </p>
+
+      <p>
+        Just a document. That is what I wanted this website to be.
+      </p>
+
+      <p>
+        I got the inspiration from a legendary programmer's personal website.
+        <a target="_blank" href="https://en.wikipedia.org/wiki/Fabrice_Bellard">Fabrice Bellard</a>.
+        He is the guy behind FFmpeg, QEMU and TCC. And this is what his website looks like...
+      </p>
+
+      <figure>
+        <img
+          src="imgs/bellard-org.webp"
+          alt="Bellard.org Screenshot"
+        >
+
+        <figcaption>
+          <p>
+            <a target="_blank" href="https://bellard.org/">bellard.org</a>
+            Yep, not even minimal css just raw html
+          </p>
+        </figcaption>
+      </figure>
+
+      <h2>Why? Because HTML is already pretty good</h2>
+
+      <p>
+        HTML has surprisingly useful set of building blocks.
+        There are headings, paragraphs, lists, tables, quotations, links,
+        images, code, and more. These are more than enough.
+      </p>
+
+      <p>
+        For example, this is <strong>strong (bold) text</strong>, this is
+        <em>emphasized (italic) text</em>, and this is
+        <a href="https://developer.mozilla.org/">a link to MDN</a>.
+      </p>
+
+      <p>
+        You can also write <code>inline code</code> without needing a
+        special component for it.
+      </p>
+
+      <h3>Headings have a purpose</h3>
+
+      <p>
+        A heading is useful because it describes the structure of the
+        document. It doesn't need to be a giant piece of decorative
+        typography.
+      </p>
+
+      <h4>This is a fourth-level heading</h4>
+
+      <p>
+        Sometimes an article needs another level of hierarchy.
+      </p>
+
+      <h5>This is a fifth-level heading</h5>
+
+      <p>
+        I probably won't use this very often.
+      </p>
+
+      <h6>This is a sixth-level heading</h6>
+
+      <p>
+        And I'm pretty sure I won't use this one at all.
+      </p>
+
+      <h2>Lists</h2>
+
+      <p>Here's an unordered list:</p>
+
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Some other language</li>
+      </ul>
+
+      <p>And here's an ordered list:</p>
+
+      <ol>
+        <li>Write code.</li>
+        <li>Draw art.</li>
+        <li>Make audio.</li>
+        <li>Question your life choices.</li>
+        <li>Ship.</li>
+      </ol>
+
+      <p>Lists can be nested too:</p>
+
+      <ul>
+        <li>
+          Languages
+          <ul>
+            <li>C</li>
+            <li>Odin</li>
+            <li>Lua</li>
+          </ul>
+        </li>
+
+        <li>
+          Tools
+          <ul>
+            <li>Sublime Text</li>
+            <li>Affinity</li>
+            <li>Reaper</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Blockquotes</h2>
+
+      <blockquote>
+        <p>
+          Simplicity is the ultimate sophistication.
+        </p>
+        <cite>Leonardo da Vinci</cite>
+      </blockquote>
+
+      <h2>Code</h2>
+
+      <p>
+        Here's a tiny C program:
+      </p>
+
+      <pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    printf("hello, world\n");
+    return 0;
+}</code></pre>
+
+      <p>
+        <a href="https://wikipedia.org/wiki/Quine_(computing)">Quine</a>
+        in <a href="https://odin-lang.org/">Odin</a>:
+      </p>
+
+      <pre><code>package quine
+
+import "core:fmt"
+
+main :: proc() {
+  fmt.printf("%s%c%s%c;\n", s, 0x60, s, 0x60)
+}
+
+s := `package quine
+
+import "core:fmt"
+
+main :: proc() {
+  fmt.printf("%s%c%s%c;\n", s, 0x60, s, 0x60)
+}
+
+s := `;</code></pre>
+
+      <p>
+        Here is the same quine in c:
+      </p>
+      <pre><code>main(){char*s="main(){char*s=%c%s%c;printf(s,34,s,34);}";printf(s,34,s,34);}</code></pre>
+
+      <p>
+        The important distinction is between code that appears inside a
+        sentence, such as <code>malloc()</code>, and a larger block of code.
+      </p>
+
+      <h2>Keyboard input</h2>
+
+      <p>
+        Sometimes you want to tell the reader to press a key:
+        <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+      </p>
+
+      <p>
+        Or perhaps:
+        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
+      </p>
+
+      <h2>Tables</h2>
+
+      <p>
+        Tables are useful when information actually has a tabular structure. (Duh)
+      </p>
+
+      <table>
+        <caption>
+          A few programming languages I have used
+        </caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Language</th>
+            <th scope="col">Year</th>
+            <th scope="col">Opinion</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>C</td>
+            <td>1972</td>
+            <td>Still excellent</td>
+          </tr>
+
+          <tr>
+            <td>Odin</td>
+            <td>2016</td>
+            <td>Joy</td>
+          </tr>
+
+          <tr>
+            <td>JavaScript</td>
+            <td>1995</td>
+            <td>Somehow everywhere</td>
+          </tr>
+
+          <tr>
+            <td>Lua</td>
+            <td>1993</td>
+            <td>1 based indexing :/</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Definitions</h2>
+
+      <dl>
+        <dt>HTML</dt>
+        <dd>
+          A markup language used to describe the structure of documents
+          on the web.
+        </dd>
+
+        <dt>CSS</dt>
+        <dd>
+          A language for describing how documents should be presented.
+        </dd>
+
+        <dt>HTTP</dt>
+        <dd>
+          A protocol used for transferring resources over a network.
+        </dd>
+      </dl>
+
+      <h2>Images</h2>
+
+      <figure>
+        <img
+          src="https://placehold.co/684x378"
+          alt="A placeholder image representing a simple website"
+        >
+
+        <figcaption>
+          An image description/caption.
+        </figcaption>
+      </figure>
+
+      <h2>A few more HTML elements</h2>
+
+      <p>
+        Here is some <mark>highlighted text</mark>.
+      </p>
+
+      <p>
+        This word is <del>wrong</del> and this one is
+        <ins>correct</ins>.
+      </p>
+
+      <p>
+        Water is H<sub>2</sub>O and two squared is 2<sup>2</sup>.
+      </p>
+
+      <p>
+        The abbreviation
+        <abbr title="Application Programming Interface">API</abbr>
+        shows a tooltip when you hover over it.
+      </p>
+
+      <p>
+        The meeting starts at
+        <time datetime="2026-09-01T09:00">9:00 AM tomorrow</time>.
+      </p>
+
+      <p>
+        You can also use <s>strikethrough</s> when something is no longer
+        accurate or relevant.
+      </p>
+
+      <h2>Details and disclosure</h2>
+
+      <details>
+        <summary>Click to reveal a secret</summary>
+
+        <p>
+          There is no secret. You clicked a native HTML element.
+        </p>
+      </details>
+
+      <h2>Horizontal rules</h2>
+
+      <p>
+        Sometimes you simply want to separate two sections of an article.
+      </p>
+
+      <hr>
+
+      <p>
+        That's what this is for.
+      </p>
+
+      <h2>What about forms?</h2>
+
+      <p>
+        A blog doesn't necessarily need forms, but the browser already gives
+        us reasonable controls for them.
+      </p>
+
+      <div>
+        <p>
+          <label for="name">Name</label><br>
+          <input type="text" id="name" name="name">
+        </p>
+
+        <p>
+          <label for="email">Email</label><br>
+          <input type="email" id="email" name="email">
+        </p>
+
+        <p>
+          <label for="message">Message</label><br>
+          <textarea id="message" name="message" rows="5" cols="40"></textarea>
+        </p>
+
+        <p>
+          <label>
+            <input type="checkbox" name="newsletter">
+            Subscribe to the newsletter
+          </label>
+        </p>
+
+        <p>
+          <button type="submit">Send</button>
+          (Nothing happens if you press this)
+        </p>
+      </div>
+
+      <h2>The point</h2>
+
+      <p>
+        None of these elements are particularly exciting. That's exactly
+        why I like them.
+      </p>
+
+      <p>
+        A good document doesn't need to fight for your attention. It should
+        make the content easy to read and then get out of the way.
+      </p>
+
+      <p>
+        There is a certain freedom in realizing that you don't have to
+        reinvent everything.
+      </p>
+
+      <p>
+        Sometimes a heading can just be a heading.
+        Sometimes a link can just be a blue link.
+        And sometimes a website can just be a website.
+      </p>
+
+      <h2>Explore</h2>
+
+      <p>
+        If you are interested in looking into other sites like this, check out
+        <a target="_blank" href="https://512kb.club/">The 512KB Club</a>.
+      </p>
+
+    </article>
+  </main>
+
+  <footer>
+    <p>
+      <a href="index.html">Back to all posts</a>
+    </p>
+  </footer>
+</body>
+</html>

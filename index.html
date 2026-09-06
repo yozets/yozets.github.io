@@ -42,9 +42,36 @@
   </main>
 
   <footer>
-    <p>
-      <small>I like staring at a screen and watching pixels change color :)</small>
-    </p>
+    <span>Total visits: <span id="visits">000</span></span>
+    <p>I like staring at a screen and watching pixels change color :)</p>
   </footer>
+
+  <script
+    src="https://page-views-api.ratneshc.com/script"
+    data-site="yozets.github.io"
+    data-path="/"
+    defer
+  ></script>
+
+  <script>
+    async function updateVisits() {
+      try {
+        await new Promise(resolve => setTimeout(resolve, 300));
+
+        const response = await fetch(
+          "https://page-views-api.ratneshc.com/api/v1/views?site=yozets.github.io&path=/"
+        );
+
+        const data = await response.json();
+
+        document.getElementById("visits").textContent = String(data.views).padStart(3, "0");
+      } catch (error) {
+        console.error("Could not load visit count:", error);
+      }
+    }
+
+    updateVisits();
+  </script>
+
 </body>
 </html>
